@@ -8,18 +8,26 @@ async function adivinhar(ultimaTentativa) {
     const resultadosPesquisa = document.getElementById('resultados-pesquisa');
 
     // Construindo o prompt
-    let prompt = `Me diga uma única palavra aleatória. Sem pontuação, ".", espaço vazio ou emoticom.`;
+    let prompt = `
+        Você é um jogador de adivinhacão e está tentando adivinhar uma palavra no pensamento do seu cliente.
+        Inform um única palavra aleatória. 
+        A palavra não pode conter pontuação exemplos: ".", "!", "?".
+        A palavra não pode conter espaço vazio.
+        A palavra não pode conter um emoticom.`;
 
     if (palavras.length > 0) {
-        prompt += ` Não pode ser uma palavra que esteja na lista: ${palavras}.`;
+        prompt += `
+        A palavra não pode ser uma dessas palavras: ${palavras}.`;
     }
 
     if (palavrasPerto.length > 0) {
-        prompt += ` A palavra está perto de uma das listadas: ${palavrasPerto}.`;
+        prompt += `
+        A palavra possui ligação direta com essas palavras: ${palavrasPerto}.`;
     }
 
     if (palavrasLonge.length > 0) {
-        prompt += ` A palavra está longe de uma das listadas: ${palavrasLonge}.`;
+        prompt += `
+        A palavra NÃO possui ligação direta com essas palavras: ${palavrasLonge}.`;
     }
 
     // Criando o objeto a ser enviado no corpo da requisição
@@ -41,8 +49,9 @@ async function adivinhar(ultimaTentativa) {
             throw new Error(`Erro ao fazer a requisição: ${response.statusText}`);
         }
 
-        const data = await response.json();
-        const text = data.resposta;
+        const text = await response.json();
+    
+        console.log(text);
 
         palavras.push(text);
     
@@ -103,16 +112,6 @@ function atualizaButtons(text) {
 
     jogo.appendChild(passouLonge);
 
-    const acertou = document.createElement('button');
-
-    acertou.id = 'acertou';
-    acertou.innerHTML = 'Acertou!';
-    acertou.addEventListener('click', function() { 
-        informar(`Acertei a palavra "${text}" com ${palavras.length} tentativas.`);
-    });
-
-    jogo.appendChild(acertou);
-
     const passouPerto =  document.createElement('button');
 
     passouPerto.id = 'perto';
@@ -122,5 +121,15 @@ function atualizaButtons(text) {
         palavrasPerto.push(text);
     });
 
-    jogo.appendChild(passouPerto);    
+    jogo.appendChild(passouPerto);  
+
+    const acertou = document.createElement('button');
+
+    acertou.id = 'acertou';
+    acertou.innerHTML = 'Acertou!';
+    acertou.addEventListener('click', function() { 
+        informar(`Acertei a palavra "${text}" com ${palavras.length} tentativas.`);
+    });
+
+    jogo.appendChild(acertou);  
 }
