@@ -16,3 +16,5 @@ Utilizando a IA do Google Gemini, será realizado uma tentativa de descobrir qua
 5- Mostra o resultado.
 
 ![image](https://github.com/user-attachments/assets/921c807a-c051-47ba-864e-0ea7f5b36331)
+
+Para testar: https://aidivinha.vercel.app/
