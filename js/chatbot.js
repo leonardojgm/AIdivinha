@@ -11,6 +11,7 @@ async function adivinhar(ultimaTentativa) {
     let prompt = `
         Você é um adivinha e está tentando adivinhar uma palavra no pensamento do uma pessoa.
         Você deve sempre informar uma única palavra. 
+        Você não pode responder com uma frase, somente pode responder com uma única palavra.
         A palavra não pode conter pontuação exemplos: ".", "!", "?".
         A palavra não pode conter espaço vazio.
         A palavra não pode conter um emoticom.`;
