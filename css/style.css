@@ -122,6 +122,9 @@ main {
   padding: 0 20px;
   max-height: 87vh; /* Calcula a altura do main subtraindo o header e o footer */
   overflow: auto; /* Permite scroll vertical no main */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Estiliza as seções da página */
@@ -185,38 +188,21 @@ section button:hover {
   background-color: var(--cor-principal); /* Cor de fundo para linhas pares */
 }
 
-/* Estilos para a seção "Regras Básicas" */
-#regras-basicas .tabela-regras th {
-  /* Estilos específicos para o cabeçalho da tabela da seção "Regras Básicas" */
-  background-color: var(--cor-principal);
-  color: var(--cor-texto-principal); 
-  font-weight: bold;
-  font-size: 14px;
-  padding: 8px 12px;
+.links {
+  display: flex;
+  justify-content: space-between;
 }
 
-#regras-basicas .tabela-regras td {
-  /* Estilos específicos para as células da tabela da seção "Regras Básicas" */
-  font-size: 12px;
-  padding: 6px 10px;
-  text-align: center;
+.links a {
+  padding: 15px;
 }
 
-#regras-basicas .tabela-regras tr:nth-child(even) {
-  /* Estilos específicos para linhas pares da tabela da seção "Regras Básicas" */
-  background-color: var(--cor-principal);
+.icon-button {
+  font-size: 1rem;
 }
 
-/* Estilos adicionais para a tabela */
-#regras-basicas .tabela-regras th:first-child {
-  /* Estilos específicos para a primeira coluna do cabeçalho */
-  width: 20%;
-  text-align: left;
-}
-
-#regras-basicas .tabela-regras td:first-child {
-  /* Estilos específicos para a primeira coluna das células */
-  width: 20%;
+.icon-link {
+  font-size: 2.5rem;
 }
 
 footer {
