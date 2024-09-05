@@ -4,12 +4,19 @@ let palavrasLonge = [];
 
 async function adivinhar(ultimaTentativa) {
     console.log(ultimaTentativa);
+    
+    removeButtons();
 
     const resultadosPesquisa = document.getElementById('resultados-pesquisa');
+
+    resultadosPesquisa.innerHTML = ``;
+
+    document.getElementById('loader').style.display = 'block';
 
     // Construindo o prompt
     let prompt = `
         Você é um adivinha e está tentando adivinhar uma palavra no pensamento do uma pessoa.
+        Você não deve se dirigir a pessoa, somente falar a palavra.
         Você deve sempre informar uma única palavra. 
         Você não pode responder com uma frase, somente pode responder com uma única palavra.
         A palavra não pode conter pontuação exemplos: ".", "!", "?".
@@ -59,14 +66,17 @@ async function adivinhar(ultimaTentativa) {
     
         console.log(palavras);
     
-        resultadosPesquisa.innerHTML = ``;
         resultadosPesquisa.innerHTML = palavra;
+
+        document.getElementById('loader').style.display = 'none';
     
         atualizaButtons(palavra);
     } catch (error) {
         console.error('Erro:', error);
 
-        resultadosPesquisa.innerHTML = 'Tenha calma as vezes eu preciso parar e pensar. Por favor espere 30 segundos e tente novamente.';   
+        await new Promise(resolve => setTimeout(resolve, 10000));
+
+        return adivinhar(ultimaTentativa);
     }
 }
 
@@ -99,9 +109,7 @@ function removeButtons() {
     });
 }
 
-function atualizaButtons(text) {   
-    removeButtons();
-
+function atualizaButtons(text) {
     const jogo = document.getElementById('jogo');
     const passouLonge = document.createElement('button');
 
