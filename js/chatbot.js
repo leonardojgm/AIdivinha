@@ -9,8 +9,8 @@ async function adivinhar(ultimaTentativa) {
 
     // Construindo o prompt
     let prompt = `
-        Você é um jogador de adivinhacão e está tentando adivinhar uma palavra no pensamento do seu cliente.
-        Inform um única palavra aleatória. 
+        Você é um adivinha e está tentando adivinhar uma palavra no pensamento do uma pessoa.
+        Você deve sempre informar uma única palavra. 
         A palavra não pode conter pontuação exemplos: ".", "!", "?".
         A palavra não pode conter espaço vazio.
         A palavra não pode conter um emoticom.`;
