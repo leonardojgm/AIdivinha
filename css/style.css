@@ -311,4 +311,15 @@ footer {
   nav ul li.ativo .submenu {
     display: block; /* Exibe o submenu ao clicar no item principal */
   }
+
+  h2 {
+    padding: 0;
+    margin: 2px;
+  }
+
+  p {
+    font-size: 15px;
+    padding: 0;
+    margin: 4px;
+  }
 }
