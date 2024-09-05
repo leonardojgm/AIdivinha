@@ -51,17 +51,18 @@ async function adivinhar(ultimaTentativa) {
         }
 
         const text = await response.json();
+        const palavra = text.trim();
     
-        console.log(text);
+        console.log(palavra);
 
-        palavras.push(text);
+        palavras.push(palavra);
     
         console.log(palavras);
     
         resultadosPesquisa.innerHTML = ``;
-        resultadosPesquisa.innerHTML = text;
+        resultadosPesquisa.innerHTML = palavra;
     
-        atualizaButtons(text);
+        atualizaButtons(palavra);
     } catch (error) {
         console.error('Erro:', error);
 
