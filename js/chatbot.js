@@ -64,7 +64,7 @@ async function adivinhar(ultimaTentativa) {
     } catch (error) {
         console.error('Erro:', error);
 
-        resultadosPesquisa.innerHTML = 'Ocorreu um erro ao gerar a palavra. Tente novamente mais tarde.';
+        resultadosPesquisa.innerHTML = 'Tenha calma as vezes eu preciso parar e pensar. Por favor espere 30 segundos e tente novamente.';   
     }
 }
 
