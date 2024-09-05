@@ -1,0 +1,313 @@
+:root {
+  --cor-principal: #fff; /* Cor principal */
+  --cor-secundaria:#333; /* Cor secundária */
+  --cor-texto-principal: #333; /* Cor do texto */
+  --cor-texto-secundaria: #fff; /* Cor do texto */
+  --cor-texto-terciaria: #727171; /* Cor do texto */
+  --cor-fundo: #fff; /* Cor de fundo */
+  --cor-destaque: #db5656; /* Cor de destaque */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  overflow: hidden; /* Impede scroll no body */
+  color: var(--cor-texto-principal); 
+}
+
+header {
+  background-color: var(--cor-secundaria); 
+  color: var(--cor-texto-principal); 
+  display: flex;
+  align-items: center;
+  height: 10vh;
+}
+
+.link-inicio {
+  text-decoration: none; /* Remove a decoração do link */
+  color: var(--cor-texto-secundaria); 
+}
+
+  .link-inicio:visited ,
+  .link-inicio:hover {
+    color: var(--cor-destaque); 
+  }
+
+  .link-inicio:active {
+    color: var(--cor-texto-secundaria); 
+  }
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: 50px;
+  margin: 10px;
+}
+
+nav {
+  margin: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 5px;
+  position: relative; /* Para posicionar o submenu */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-texto-secundaria); 
+}
+
+nav a:hover {
+  color: var(--cor-destaque); 
+}
+
+.ativo {
+  color: var(--cor-texto-terciaria); 
+}
+
+.item-menu {
+  padding-left: 10px;
+}
+
+.submenu {
+  display: none; /* Oculta o submenu por padrão */
+  position: absolute; /* Posiciona o submenu em relação ao item de menu */
+  top: 100%; /* Posiciona o submenu abaixo do item de menu */
+  left: 0;
+  background-color: var(--cor-principal);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Asegura que o submenu fique acima dos outros elementos */
+  margin-top: 10px;
+}
+
+.submenu li {
+  padding: 10px;
+}
+
+.submenu a {
+  color: #333;
+  display: block; /* Exibe cada link do submenu em uma linha */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.item-submenu {
+  white-space: nowrap;
+}
+
+main {
+  padding: 0;
+  position: relative; /* Necessário para o background-image funcionar */
+  background-image: url('/img/fundo.png'); /* Define a imagem de fundo */
+  background-size: cover; /* Ajusta a imagem para cobrir todo o main */
+  background-color: rgba(255, 255, 255, 0.8); /* Define a cor de fundo com opacidade */
+  background-blend-mode: lighten; /* Mistura a imagem com o fundo branco */
+  min-height: 87vh; /* Calcula a altura do main subtraindo o header e o footer */
+}
+
+.content {
+  padding: 0 20px;
+  max-height: 87vh; /* Calcula a altura do main subtraindo o header e o footer */
+  overflow: auto; /* Permite scroll vertical no main */
+}
+
+/* Estiliza as seções da página */
+section {
+  display: flex; /* Usa Flexbox para layout */
+  flex-direction: column; /* Alinha os itens na vertical */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  margin-bottom: 1rem; /* Espaçamento abaixo de cada seção */
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+  width: 20rem; /* Largura dos inputs */
+  border: none; /* Remove a borda padrão */
+  padding: 1rem; /* Espaçamento interno */
+  border-radius: 1.5rem; /* Borda arredondada */
+  margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
+  color: var(--cor-texto-principal); /* Cor do texto */
+  font-size: 1rem; /* Tamanho da fonte */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+/* Estiliza os botões dentro das seções */
+section button {
+  padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 1.5rem; /* Borda arredondada */
+  background-color: var(--cor-principal); /* Cor de fundo do botão */
+  color: var(--cor-texto-principal); /* Cor do texto do botão */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin-bottom: 10px;
+}
+
+/* Adiciona efeito hover ao botão de pesquisa */
+section button:hover {
+  background-color: var(--cor-secundaria); /* Muda a cor de fundo ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
+  color: var(--cor-texto-secundaria); /* Cor do texto do botão */
+}
+
+.tabela-regras {
+  border-collapse: collapse; /* Remove espaços entre bordas de células */
+  font-family: "Arial", sans-serif; /* Define a fonte da tabela */
+}
+
+.tabela-regras th {
+  background-color: var(--cor-principal); /* Cor de fundo do cabeçalho da tabela */
+  border: 1px solid var(--cor-principal); /* Borda do cabeçalho da tabela */
+  padding: 8px; /* Espaçamento interno das células do cabeçalho */
+  text-align: left; /* Alinhamento do texto do cabeçalho */
+  font-weight: bold; /* Estilo de fonte do cabeçalho */
+}
+
+.tabela-regras td {
+  border: 1px solid var(--cor-principal); /* Borda das células da tabela */
+  padding: 8px; /* Espaçamento interno das células */
+}
+
+.tabela-regras tr:nth-child(even) {
+  background-color: var(--cor-principal); /* Cor de fundo para linhas pares */
+}
+
+/* Estilos para a seção "Regras Básicas" */
+#regras-basicas .tabela-regras th {
+  /* Estilos específicos para o cabeçalho da tabela da seção "Regras Básicas" */
+  background-color: var(--cor-principal);
+  color: var(--cor-texto-principal); 
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+#regras-basicas .tabela-regras td {
+  /* Estilos específicos para as células da tabela da seção "Regras Básicas" */
+  font-size: 12px;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+#regras-basicas .tabela-regras tr:nth-child(even) {
+  /* Estilos específicos para linhas pares da tabela da seção "Regras Básicas" */
+  background-color: var(--cor-principal);
+}
+
+/* Estilos adicionais para a tabela */
+#regras-basicas .tabela-regras th:first-child {
+  /* Estilos específicos para a primeira coluna do cabeçalho */
+  width: 20%;
+  text-align: left;
+}
+
+#regras-basicas .tabela-regras td:first-child {
+  /* Estilos específicos para a primeira coluna das células */
+  width: 20%;
+}
+
+footer {
+  background-color: var(--cor-secundaria); 
+  color: var(--cor-texto-secundaria); 
+  padding: 5px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3vh;
+}
+
+.link-rodape {
+  text-decoration: none; /* Remove a decoração do link */
+  color: var(--cor-texto-secundaria); 
+}
+
+  .link-rodape:visited,
+  .link-rodape:active {
+    color: var(--cor-texto-secundaria); 
+  }
+
+  .link-rodape:hover {
+    color: var(--cor-destaque); 
+  }
+
+/* Ícone do menu mobile */
+.menu-icon {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: var(--cor-texto-secundaria);
+  cursor: pointer;
+  display: none;
+  margin-right: 20px;
+}
+
+/* Media Queries para mobile */
+@media (max-width: 920px) {
+  header {
+    justify-content: space-between;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column; /* Faz com que os itens fiquem em coluna */
+    width: 100%; /* Ocupa toda a largura */
+    background-color: var(--cor-secundaria); /* Mesma cor do header */
+    position: absolute;
+    top: 60px; /* Posiciona abaixo do header */
+    left: 0;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    margin-top: 1vh;
+    padding-top: 2vh;
+  }
+
+  nav.ativo ul {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .item-menu {
+    margin-bottom: 20px;
+  }
+
+  /* Submenu no mobile */
+  .submenu {
+    position: static; /* Remove o posicionamento absoluto no mobile */
+    box-shadow: none;
+    background-color: var(--cor-secundaria);
+  }
+
+  .submenu li {
+    padding: 15px 15px 0;
+  }
+
+  .submenu a {
+    color: var(--cor-texto-secundaria); 
+  }
+
+  /* Estilo para o item de submenu ao ser clicado */
+  nav ul li:hover .submenu {
+    display: none; /* Desativa o hover */
+  }
+
+  nav ul li.ativo .submenu {
+    display: block; /* Exibe o submenu ao clicar no item principal */
+  }
+}
