@@ -18,3 +18,16 @@ Utilizando a IA do Google Gemini, será realizado uma tentativa de descobrir qua
 ![image](https://github.com/user-attachments/assets/921c807a-c051-47ba-864e-0ea7f5b36331)
 
 Para testar: https://aidivinha.vercel.app/
+
+Ideia:
+
+Adivinhando uma palavra existente no dicionário direto do seu pensamento
+
+	- Um botão para "Iniciar"
+	- Depois aparece tres botões "Proximo" da resposta, "Longe" da resposta e "Acertou"
+	- Um lugar para exibir a ultima palavra chutada
+	- Um lugar para exibir um contador de chutes
+	- Uma mensagem de resultado
+	- Após concluir um botão para "Recomeçar"
+	- Melhorar acertividades, pois está repetindo palavras
+	- Esconder key
